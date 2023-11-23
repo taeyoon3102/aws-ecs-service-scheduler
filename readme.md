@@ -33,6 +33,7 @@ aws cloudformation stack template 를 통해 생성되는 lambda function 에 �
 		}
 	]
 }
+'''
 
 ### 2. lambda 코드의 configuration 폴더 작업
 path : instance_scheduler > configuration > config_admin.py
