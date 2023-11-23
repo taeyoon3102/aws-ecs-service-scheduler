@@ -15,7 +15,7 @@ ecs service 는 desiredCount 값을 가지고 있기 때문에 켜고 끌 때 �
 ## 적용
 ### 1. lambda 에 권한 추가
 aws cloudformation stack template 를 통해 생성되는 lambda function 에 아래와 같은 권한을 추가해줘야 한다  
-'''json
+```json
 {
 	"Version": "2012-10-17",
 	"Statement": [
@@ -33,14 +33,12 @@ aws cloudformation stack template 를 통해 생성되는 lambda function 에 �
 		}
 	]
 }
-'''
+```
 
 ### 2. lambda 코드의 configuration 폴더 작업
 path : instance_scheduler > configuration > config_admin.py
-<pre>
-<code>
-````python
 
+```python
 ...
 
 class ConfigAdmin:
@@ -56,17 +54,14 @@ class ConfigAdmin:
 
 ...
 
-````
-</code>
-</pre>
+```
+
 
 ### 3. lambda 코드의 schedulers 폴더 작업
 #### 3.1 \_\_init\_\_.py
 path : instance_scheduler > scheulders > \_\_init\_\_.py
-<pre>
-<code>
-````python
 
+```python
 ...
 
 from instance_scheduler.schedulers.ec2_service import Ec2Service
@@ -77,9 +72,7 @@ from instance_scheduler.schedulers.ecs_service import EcsService # here
 
 SCHEDULER_TYPES = {"ec2": Ec2Service, "rds": RdsService, "ecs": EcsService} #here
 
-````
-</code>
-</pre>
+```
 
 #### 3.2 ecs_service.py 파일 추가 및 코드 복사
 path : instance_scheduler > scheulders > ecs_service.py
