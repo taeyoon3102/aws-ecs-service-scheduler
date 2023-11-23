@@ -77,3 +77,7 @@ SCHEDULER_TYPES = {"ec2": Ec2Service, "rds": RdsService, "ecs": EcsService} #her
 #### 3.2 ecs_service.py 파일 추가 및 코드 복사
 path : instance_scheduler > scheulders > ecs_service.py
 
+
+### 4. ecs service에 tag 추가
+console이나 aws cli를 이용하여 스케쥴링을 하고자 하는 ecs service에 tag를 달아준다.  
+ec2나 rds instance에 tag를 달아주는 것과 동일한 방식이다.  
